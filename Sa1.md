@@ -57,7 +57,75 @@ Service control policies and enable it.
 ![Accounts](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/568fd781-72be-4027-9c30-846b9326f408)
 
 
+Now got to switch role
+and enter details of the new account which prod.
+992382672911
 
+Now u can use this account to crate ur prod resources.
+
+*******************************
+Service COntrol Policies.
+Note:- IAM role for use of the resource.
+SCP for the use of service.
+
+U can have OU's under management account and then u can have diiferent account's under that OU's and can have tag and scp policies.
+
+![SCPS](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/ea55e970-9779-407b-a767-b47433170b10)
+
+
+****************************8
+HOL SCP Strategies and Inheritance
+Switch back to ur root account
+got SCP's and create a policy
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RequireMicroInstanceType",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringNotEquals":{               	
+          "ec2:InstanceType":"t2.micro"
+        }
+      }
+    }
+  ]
+}
+
+and now attach this policy to DCT.Prod account
+Switc to DCT.Prod and launch an ec2 with t2.micro u will be able to do it.
+try launching incntance other then t2.micro it will fail.
+
+*******************************
+AWS COntrol TOwer
+![control tower](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/03610179-b266-40ff-9f5c-9f360697db2a)
+
+
+
+HOL
+GOt to CT page-->Landing ZOne
+define home region.
+define OU structure
+Securtiy
+Sandbox
+enter 2 diff emails.
+Edit Account factory public subnet
+Check Guardrails for governance over the account.
+***************
+How IAM works
+Priniplues:- Users,role,Federated users(users with FB,amazongoogle account),Application (programatically)
+
+Users could be grouped and policies could be applied to the group.
+
+AWS STS(security token service)
+(ec2 wants to access s3, then u create an Iam role but u can also create STS, so that ec2 gets temporary access to 
+s3)
+
+RBAC:- policy applied to roup and group has users.
+ABAC:- user has tag like dba admin they can get access to RDS and only do start,restart,stop)
 
 
 
