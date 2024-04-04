@@ -45,6 +45,16 @@ We can have a heirrchy
 
 ![Org](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/b3a66424-adf0-456c-9d01-624d635f7590)
 
+**************
+HOL Create Aws org and add account
+GO to AWS Oranization in search bar-->create org
+add new account-->create account-->DCT.production-->Enter email-->IAM role=OrganizationAccountAccessRole
+
+ALso go to Policies AWS Organizations
+Policies
+Service control policies and enable it.
+
+
 
 
 
