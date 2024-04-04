@@ -54,6 +54,8 @@ ALso go to Policies AWS Organizations
 Policies
 Service control policies and enable it.
 
+![Accounts](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/568fd781-72be-4027-9c30-846b9326f408)
+
 
 
 
