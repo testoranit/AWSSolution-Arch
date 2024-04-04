@@ -1,0 +1,63 @@
+
+
+****
+COnfigure account and create budget alarms
+
+got to accounts-->
+IAM user and role access to Billing information 
+Activate IAM access
+
+Go to Billing preferences
+
+enable all notification options
+
+go to budget
+create abudget
+create amontly budget for 5 dollars
+
+***
+Setup indivisyal user account
+create iam user
+create a user group and assign full permissions to it.
+assign this user group to the iam user
+and use this iam user.
+
+login to iam user gen acceks for awscli
+
+downlod awscli for windows
+configure awscli on windows  with this acces keys
+
+aws s3 ls
+aws s3 mb s3://testoranitnewbucket03042024
+(create a new bucket)
+
+also u can do the same using aws cloudshell
+
+
+*******
+Aws Org
+heirrchy
+u have the management account (which is the root accoutn)
+we can create additonal accounts or join exist accounts under the management account
+eg:- prod and dev account
+and deploy resources in those accounts respectively.
+We can have a heirrchy
+
+![Org](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/b3a66424-adf0-456c-9d01-624d635f7590)
+
+**************
+HOL Create Aws org and add account
+GO to AWS Oranization in search bar-->create org
+add new account-->create account-->DCT.production-->Enter email-->IAM role=OrganizationAccountAccessRole
+
+ALso go to Policies AWS Organizations
+Policies
+Service control policies and enable it.
+
+
+
+
+
+
+
+
