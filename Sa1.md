@@ -156,6 +156,87 @@ AWS Managed microsoft AD.
 ![AD COnnector](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/da5364cf-9fb8-4b00-82a5-3f494abdc3e1)
 
 
+Dederation
+eg:- u have AD on ur corporate and u want to connect to ur AWS services, so u use 1 uderidentity 
+
+![IAM SAML 2 0 Federation service](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/2404f860-2963-4b34-9bcc-dee0f8afa0e2)
+
+![IAM Web Federation](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/a579c186-7849-44a3-a21f-ddc3e48ade4a)
+
+![IAM Identity centre](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/3f124a85-83b2-4883-89e2-42bcc6c5f629)
+
+![AMAzon COgnito](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/17be6721-a809-4e1a-b28b-9beaa0f405e3)
+
+*********
+AWS pushes to use Identity centre when u create new users but there ma be org where they would be using IAM without Identity centre and it would be tedious for them to migrate it to Identity center, but for new org u can use ID Centre.
+
+HOL Search
+:- Identity Centre
+choose ur id store.
+*********************************
+AWS GLobal Infra.
+
+![AWS Global Infra](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/2a9e913a-535b-4dea-9f2c-98c8bc8d1223)
+
+You can use AWS outposts to use some service of AWS on ur on-prem
+AWS Wavelenght zone(low latency over 5g)
+AWS Local ZOne(low latency)
+
+*****
+AWS CLoudfront
+Cache content to edge locations.
+![AWS CLoudfront](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/52b5c5b7-ccab-4efe-9345-13a48bb51166)
+
+*********************
+AWS VPC CIDR Blocks
+
+Network:- 192.168.0.0
+/24 subnet mask:- 255.255.255.0
+So 8 host bits= 256 addresses.
+Here 192.168.0.1 will be first address and 0.0 can't be used since it's the newtwok address and 255.255 could not be used since it's the broadcast address.
+
+
+/16 subnet mask:- 255.255.0.0
+So 16 host bits=65536 addresses.
+
+/20 Subnet mask (Varibale lenght subnet mask):- 255.255.(4/4).0
+So 12 hosts bits=4096 addresses.
+
+![Define CIDR Blocks](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/05904d72-7b22-46f7-a311-44f8c4acebd2)
+
+Rules and Guidliness.
+
+CIDR Block size should be between /16 and /28
+Should not overlap with another CIDR block.
+u can't re-size it later.
+first 4 and last ip addresses can't be used.
+
+go to network00.com
+![network00 0](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/89917c68-cf68-4250-b268-289649017c3c)
+
+
+**********************
+SG is at instance level, is an stateful way of defining traffic(u define the incoming traffic and outgoing traffic)
+it allows traffic and has a default deny rule.
+
+NACL is at subnet level , and is an steless way of defining traffic,
+(u can define the allow and deny rules with priorities.)
+
+***********************************
+VPC ENdpoints.
+
+u wan't to connect to other AWS service like  without going through Public internet, u use endpoints.
+VPC interface Enfpoint:-
+UC:- what if ec2 in priv subnet wants to connect to other AWS service.. and u don't have pip since it'sin priv sub and don't wan't to use NAT Gatweay for the traffic from this ec2 to the Internet so u ucanuse endpoint eni in priv subnet,which can then communicate to othr aws services,it uses prip to connect to other aws service.
+
+
+And VPC Gateway endpoint:-
+priov ec2 wan't to connect wit S3
+same u don't have pip since it's in priv subnet and don't want to go through internet.
+so u use s3 gateway endpoint.
+in this case u create a route table entry.
+
+
 
 
 
