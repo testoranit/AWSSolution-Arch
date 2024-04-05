@@ -236,6 +236,39 @@ same u don't have pip since it's in priv subnet and don't want to go through int
 so u use s3 gateway endpoint.
 in this case u create a route table entry.
 
+*************Hybrid connectivity.
+1)AWS CLIENT VPN.
+![AWS Lient VPN](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/e298f954-843d-4f5d-90d3-a5e638dd66a9)
+
+2)AWS SITE to SITE VPN.
+![AWS SITE-to-SITE VPN](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/135be652-cfe3-4403-972d-dc08b6c5155c)
+
+
+3)AWS VPNCLOUDHUb
+![AWSVPNCLoudhub](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/c1bd2638-36ce-44ce-a694-dfce5d158b47)
+
+4)AWS DIrect COnnect
+similar like AZure expressroute(private connection from onprem to AWS)
+
+5)AWS Tansit Gateway.
+  
+![AWS Transit Gateway](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/4483758c-22cd-4c69-a9d7-f0f6ad4eb50c)
+
+*******************
+AWS EBS
+
+EBS attah to 1 instance
+U can do Multi attach meaning 1 EBS to many EC2 but it should be in the same availibilty zone.
+it has some limitations though.
+
+You can alos cretae a snapshot of an EBS volume and use that snapshot to create the same volume also in other az for other
+ec2 if needed.
+
+********AWS S3
+u acces object using https:// protocol.
+max size of 1 file in S3 is 5TB.
+unlimited storage files
+s3 bucketname should be unique globally
 
 
 
