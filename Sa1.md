@@ -127,6 +127,26 @@ s3)
 RBAC:- policy applied to roup and group has users.
 ABAC:- user has tag like dba admin they can get access to RDS and only do start,restart,stop)
 
+********
+HOL RBAC
+user group attach policy to group.
+
+********
+HOL ABAC
+Add tags to user like depat=prod, and other user dept=dev
+create abac policy like if dba=prod and tag=prod then they can restar prod.
+create other policy for dev user.
+
+************
+Cross account access to S3.
+
+create s3 and a role in 1 account
+now create an trusted policy for this role using IAM with other account details.
+now create & attach an inline policy that gets access to the S3 bucket to the other account.
+attach this policy  to the role.
+and now access the S3 bucket from another account.
+
+
 
 
 
