@@ -147,6 +147,14 @@ attach this policy  to the role.
 and now access the S3 bucket from another account.
 
 
+***********
+Note:- Managed AWS policies cannot be ediited,but u can use it as a reference to create a custom policy.
+
+*******
+AWS directory service.
+AWS Managed microsoft AD.
+![AD COnnector](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/da5364cf-9fb8-4b00-82a5-3f494abdc3e1)
+
 
 
 
