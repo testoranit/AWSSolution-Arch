@@ -340,6 +340,35 @@ Private hosted zone:-
 ur ec2 asks for the dns resolution  with Route 53 for ur db in private subnet is an example of Private Hosted Zone.
 
 
+MIgratio of Route 53:-
+You can always migrate records from another hosted zone or other account or other provider to AWS Route 53, and viceversa.
+
+![ROuting policis](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/a329abb3-4a3a-4c25-9b1f-1f8a457112dc)
+
+Also have weighted routed policies.
+u can use this for a blue green scenaro.
+
+FAilover routing policy:- Prim and Secondary(for DR scenario)
+US-east-1
+Create ASG with 1 instance and create target group for this instance,attach it to an lB.
+Eu-west-1
+Create ASG with 1 instance and create target group for this instance,attach it to an lB.
+
+Create a hosted zone record
+
+for Prim
+![Primary Record for Region Failover](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/8de38ba9-132e-42ac-8448-87d88a256796)
+
+FOr Secon;_
+do as above.
+
+And test a failover my doing something down on primary anc check the DNS name link in broweser.
+
+![Prim URL in browser](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/cb3bda4d-2c6b-4c07-847c-2e9f8e5d05b4)
+
+After:-
+![Secondary failure](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/f5c30b35-dae6-4548-9248-8f348c748a38)
+
 
 
 
