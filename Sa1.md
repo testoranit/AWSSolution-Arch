@@ -270,6 +270,76 @@ max size of 1 file in S3 is 5TB.
 unlimited storage files
 s3 bucketname should be unique globally
 
+S3 classes:-
+Durability and availibilty in S3
+119s of durable 99.9999999 (data is not lost)
+
+Availibilty:- 99.99%
+
+![S3 Storage classes](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/6807281e-86be-4e70-a21e-5f4b40e03605)
+
+***
+S3 life cycle policies
+
+![Lifecycle Transitions](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/e229f579-0468-428a-9655-8cb4d22b13c2)
+
+![eg Lifecycle policy](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/80bdbd15-6de0-4df5-acbf-744c9de678c9)
+
+***HOL S3 replication and lifecycle configuration
+Creats asource  S3 bucket
+us east 1
+enable bucket versioning
+
+now create dest bucket with same as above
+
+create an IAM role
+Cstom trust policy
+and give s3 the asumerole api action in the code.
+go to the role once created and create an inline policy
+
+create replication for src bucket
+enter details and then uplod files in src bucket, it would be replicated to dest bucket.
+
+u can do same region or cross regrion replication but pre req is to enable versioning.
+
+
+create a lifecycle rule for src bucket if required.
+
+Versioning
+
+Upload some files.
+and again upload same file to the same buckrt, u see the versions of different bucket.
+
+*************
+ENcryption:-
+Server side encryption and client side encryption.
+while uploading objects to S3 u need to provide an encryption key to it.
+
+***********************************888
+Server Access loging:- this is for enabling logging for the bucket.
+
+***************
+S3 Event Notfications
+Got to SNS and create a topic.
+Create a subscription for this topic.
+go to ur email and confirm subscription.
+Now go to topic and configure access policy for the topic.
+so that bucket can access the topic.
+Now go to bucket and create event notfications.
+
+*************AWS Storage Gateway
+On-prem storage to AWS Storage usinw AWS Direct COnnect
+1)FIle gateway
+2)Volue Gateway.
+**************AWS Route 53
+Pulic hosted Zone:- user access an application via browser, when it firsts asks route 53 to resolve the ip and access the web page.
+
+Private hosted zone:-
+![Private AMzonon Route 53 hosted zone](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/3d2e9d88-0a32-4f1d-ac10-543f0183d83f)
+
+ur ec2 asks for the dns resolution  with Route 53 for ur db in private subnet is an example of Private Hosted Zone.
+
+
 
 
 
