@@ -417,5 +417,14 @@ Cloudfront caching and Behaviours.
 - Disable caching
 - Add 2 more origins for the buckets containing the files and create/configure OAC
 - Configure cache behavior settings for each origin based on file type (PDF or JPG) and default going to the static website
+**************************************************************
 
+AWS Global Xcellerator
+
+![AWS GLobsl Accelerator](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/80039f31-4c98-4773-ab61-ff2708015050)
+
+
+
+do the lab similar to ROute 53 failower and 
+this time add global accelerator
 
