@@ -370,5 +370,52 @@ After:-
 ![Secondary failure](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/f5c30b35-dae6-4548-9248-8f348c748a38)
 
 
+*******Route 53 Resolver
+
+![Route 53 resolver](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/d2b52483-98f3-4cda-a7e4-0a2f2886289a)
+
+Same goes with Inbound endpoints.
+
+*******************
+Amazon CLoudfront Origins and distributins.
+![Cloudfromt](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/0df51e94-a077-48f2-a21a-1bd49cf428bc)
+
+![Cloufront distributions and origin](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/9892857c-a000-4c12-9562-57877088e603)
+
+**************
+Cloudfront caching and Behaviours.
+
+![Cloudfront caching](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/dec8c334-8d5a-4af1-8516-25d2d70fd59f)
+
+# Amazon CloudFront Cache and Behavior Settings
+
+1. Set up Amazon S3 buckets:
+- Create two S3 buckets for the files (e.g., 'pdf-bucket' and 'jpg-bucket')
+- Upload sample PDF files to the 'pdf-bucket' and JPG images to the 'jpg-bucket'
+- Create a bucket for the static website
+
+2. For the static website:
+- Enable public access
+- and edir bucket policy as:- {
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Principal": "*",
+			"Effect": "Allow",
+			"Action": "s3:GetObject"
+			"Resource": "arn:aws:s3:::my-static-web-08042024/*"
+		}
+	]
+}
+- Configure as a static website
+- Add the index.html (when ready)
+
+3. Configure Amazon CloudFront:
+- Create a new CloudFront distribution
+- Add the static website as an origin (use website endpoint)
+- Disable caching
+- Add 2 more origins for the buckets containing the files and create/configure OAC
+- Configure cache behavior settings for each origin based on file type (PDF or JPG) and default going to the static website
 
 
