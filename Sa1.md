@@ -428,3 +428,31 @@ AWS Global Xcellerator
 do the lab similar to ROute 53 failower and 
 this time add global accelerator
 
+***********
+AWS Database
+RDS :- runs on EC2
+
+RDS SUpports following db engines:-
+1)Amazon Aurora
+2)MYSQL
+3)MariaDB
+4)Oracle
+5)Microsoft SQL Server
+6)PostgresSQL
+
+RDS Scalling
+1)Vertical:- Scale VCPU's RAM.
+
+2)Horizontal scaling :- u can have read replicas
+
+![RDS RD-Horizonatal scaling](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/d31c92fa-61d5-4f9b-8725-1ddf09eb189f)
+
+
+![RDS Multi-AZ and Read replicas](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/941c6036-4fcd-4d53-b546-4207fe1f5fa9)
+
+RDS can be inside VPC and can have a Pip for public access and can also be priv
+
+DB volumes & snaphots could be encyted.
+encryption can only be done at the time of db creatin.
+
+
