@@ -34,5 +34,20 @@ go to ur email:- confirm subsciption
 
 deleting alarm will only delete alarm and nort delete topics/subsciption or the metrics.
 
+Cloudwatch:- can also aggegarte logs from multiple sources into single consildate views.
+Monitor and react to alarms
+
+State of Alarm:-
+OK:- Metric is in defined threshold and alarm is not triggered yet
+Alarm:- outside of metric threshold and alarm has been triggered.
+insufficnet data:- enough metric is not available to detect the alarm state.
+
+CLoudwatch dashboards:-In complex we need to monitor different services with more metrics,u can have dashboards  
+consolidated view
+each dashboards:- can display multple metrics can be accesoirsed with texts and images.
+u can pull data from multiple AWS regions to single dashboard for getting a global view
+
+Awscloudwatch-->dashboards-->CPU utlization
+u can have multiple aws services/resource with their metrics on 1 single dashboard
 
 
