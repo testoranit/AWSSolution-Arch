@@ -40,7 +40,9 @@ Monitor and react to alarms
 State of Alarm:-
 OK:- Metric is in defined threshold and alarm is not triggered yet
 Alarm:- outside of metric threshold and alarm has been triggered.
-insufficnet data:- enough metric is not available to detect the alarm state.
+insufficnet data:- enough metric is not available to detect the alarm state.Ec2 doesn't send metrics to cloudwatch
+u need to figure ot why
+
 
 CLoudwatch dashboards:-In complex we need to monitor different services with more metrics,u can have dashboards  
 consolidated view
@@ -49,5 +51,49 @@ u can pull data from multiple AWS regions to single dashboard for getting a glob
 
 Awscloudwatch-->dashboards-->CPU utlization
 u can have multiple aws services/resource with their metrics on 1 single dashboard
+
+Lab:- set alarm for ec2 cpu utlization
+
+**AWS features
+Billing alarms:- alarms on estimated charges monitor estimated charges.
+we can integaret it with some scripts to decommision the resources which are not in use and adding to bill.
+
+**Events
+state changes for AWS resources
+number of scenarois automate the ops and maintainece of cloud infra
+eg:- brand new instannce addition to DNS service.
+
+Logs:-view,index and search logs from diff services.
+
+Metrics:_ core foundation of cloudwatch
+
+AUto Scaling integration:-up and down as per requirement
+eg:- when utlization is low for ur app then stop 1 instance out of 2 instances and spin up an instance if required.
+
+u can also do failed reboot of ec2(where cloud watch needs IAM role access to rebboot ec2)
+also integrate with 3 party monitoring tools
+
+U can creae custom metrics(mem utli exlusive of cache and buffer,disk space used,and swap space utlixatio for app)
+u can create alarms on it.
+
+***Monitoring Ec2
+
+Metrics and alarms
+custom metrics
+and do status checks
+Metrics are free
+by defal metrics are collected every 5 min , with extra cost u can get 1 min metrics
+
+
+
+AWS Status checks🥇
+system status checks:-underlying aws systems(physical quipment behind the serice,like physical host of server)
+Instance status checks:- aws ec2 has any probmens
+
+
+**********Custom metrics:-
+cloud watch Monitoring scripts from sample librabry of aws
+custom IAM role:- so that ec2 can report the custom metrics to cloudwatch(custom metrics role)
+
 
 
