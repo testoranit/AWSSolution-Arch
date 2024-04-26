@@ -91,9 +91,89 @@ system status checks:-underlying aws systems(physical quipment behind the serice
 Instance status checks:- aws ec2 has any probmens
 
 
+![custom metrics](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/d03d19a4-3a42-479b-a67b-a64846743ce5)
+
+now go to cloudwatch->resource and chooose ur custom metrics
+
+
 **********Custom metrics:-
 cloud watch Monitoring scripts from sample librabry of aws
 custom IAM role:- so that ec2 can report the custom metrics to cloudwatch(custom metrics role)
+lANUCH AN EC2
+install some perl scripts on ec2
+download custom metrics scripts from AWS
+These scripts u need to execute manually so it collects the metrics once..if you want recussing metrics then schedule this script on crontab
+
+*************************
+EBS
+storage for Ec2
+most commonly used for General purpose Ec2
+EBS volumes can be attached/dettached/re-attached to Ec2 instances in the same AZ>
+Types:-
+General puspose Gp2:- SSD:- vide variety of transaction volumes(default)
+Provison Iops:- soliid ssd:- critical applications high pergormance
+Throuput optimised hardisk
+
+Falvors:- SSD and HDD
+Iops is a primary unit of measure for performance of EBS
+Ios for SSD is measured in chunks 256 KB Iops
+
+cloudwatch gives basic and detailsed metrics for EBS.
+Aws  by default does atstus checks
+check monitoring metrics for EBS
+***************************
+RDS Monitoring(PaaS services)
+goto db :- Monotroing:- defualt monitoring metrics
+It lso captures events for RDS
+U can also see logs:- error logs
+COmmon metrics;_
+1)CPU Utilization
+2)Database connections
+3)Freeable memory
+4)Free storage space
+5)Read/write Iops
+6)Read/write latency (time taken for Io operations)
+
+create alarms based on the mterics
+
+****You should monitor
+1)Resource utlization
+2)System errors
+3)Accidental Termination.
+4)CLuster health
+5)Maintainence window
+6)Query logs
+7)RDS metrics
+8)Intane level metrics
+9)RDS Resource modification
 
 
+RDS-->Events-->Create event subscriptions
+*************************
+Monitoring and alertinf gor ELB
+
+LAb:- create ALB
+AWS ELB Metrics
+1)Backed connection errors
+2)Latency
+3)Surge queue lenght:- queued reauests since unable to send traafic to any insatnce
+4)Spill over count:_ if queue request is full it gets dropped.
+4)Http Responses(5xx,4xx,2xx)
+5)Healthy host count
+6)unhealthy host count.
+
+Monitor AWS ELB
+Cloudwatch-->ELB-->
+
+**************Monitoirng and alerting for AwS billing and costs
+Billing dashboard-->Preferences(email,recieve biling alerts via cloudwatch,recive billing reports and save to s3 bucket)
+
+cloudwatch-->iblling->browse metrics-->--Create alarm 
+
+
+
+
+Gen:-
+Capital Expenditure (CapEx):-Examples of CapEx in the cloud context include purchasing physical servers, networking equipment, and storage devices to set up an on-premises data center.
+Examples of OpEx in the cloud context include monthly fees for virtual machine instances, storage usage charges, and fees for managed services such as database hosting or machine learning services.
 
