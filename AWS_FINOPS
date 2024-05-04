@@ -1,0 +1,116 @@
+CLoud Pricing concepts
+
+Pay for what u consume
+no capex is required
+use opex mode pay as u use
+every sevice has different pricing model.
+benefits:-
+1)pay for what u use.
+2)Pay as u go:- no long term contracts:- when u stop using resources we stop paying for it.
+3)Use more and pay les:- tiered pricing for many serviverics ,more data u store pay less storage s3
+4)Commit and Pay less:- u have an opportunity to make a commitment and get a discount in return
+eg:- saving plans or reservations
+5)Optimized:_ scale up and down.
+6)No complex licesing:-
+
+Pricing modesl:- 1)On demand;_ pay for services as u use them.
+2)Commitment model:_ making a financinl commitment in return for discount like savings plans and reservations
+3)Spot instances:_ no commitments, less reliable. but
+4)Free tier:_ at no cost to explore aws services
+
+
+3) Funda drives costs
+1)Paying for compute
+2)STorage :_ per  geegabiyte usage
+3)Data  transfer:_ data going out of cloud.
+
+Pricing factors
+1)Resource usage2)TIme 3)Service level:_ support and redundancy which is required 4)
+
+Service models:-
+1)IaaS:_ rent vm's storae and networks
+2)Paas:- gets platforms so that u can develop, no in fra access
+3)SaaS:_ user subscribe to access software that are ready to use.
+
+
+Principles for on-prem IT for overspending vs cloud
+ON prem              vs cloud
+capex(fixed costs)                   opex
+Maninatinence and upgrades       provider handles(can reduce operation issues sometimes)
+Saclability and Elasticity         dynamic scaling
+software licesing has long term   BYOL
+commitment
+Power cooling costs,reasl estate  indirect sosts are included in pricing.
+costs lead to indeirect sosts
+asset deprciaition                cloud handles asset depriciation
+								 MOnitor cosots
+Vm's can be optimized hardware isn't cloud:- both can be done.
+
+
+Free tier:-
+Some services are always free:- Dynamo db offers 25gb of storage.
+2)12 months free
+3)short term trials:-  Amazon redshift 750 hrs free for 2 months.
+check AWS documentation.
+
+
+how to use:-
+1)expolre and learn.
+2)early stage startups.
+3)samll projects
+
+Best practice
+1)Monitoring
+2)Account age
+3)Multiple services(EC2 would be free associated data tranfer not.
+
+regulary cleanup unused resources.
+*********************Pricing research
+AWS Pricing-->pricing-->On demand-->Calculator
+
+
+Savings plans
+Longer commitment lock in period(use it or loose it), if u pay early then higher discount.
+Ec2,RDS,lamdba,fargate,redshift,dynamodb
+
+3 types
+1)compute savings plan :_ for all above servicees,Disocunt up to 66% applies to any instance type.
+2)Ec2 Instance savings plan:- disocunt upto 72%, ony for ec2 u need to commit to specific family & region like m5 but size could vary.
+3)amazon sagemaker:_ discount upto 64%, any sagemaker instance.
+
+got to pricing->ec2-->savings plans-->
+
+ALso go to COnsole-->AWS COSt management-->Savings plan
+
+***
+Aws console-->Billin-->Budgets-->
+
+
+*************Reserved Instances
+sope is regional or zonal
+
+zonal
+
+Billing discount of 72%, locked into AZ,instance family and size
+
+
+
+regional
+billing discount acrros any az, no capacity reservationsLinux:_ can change size.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								 
