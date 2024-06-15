@@ -1,0 +1,40 @@
+**AWS COnfig(Detective controls)
+Inventry and COnfig mgmt serive from AWS,it helps to find out near real time inventory of all the resources that is running in you account.
+u can aggrgate all ur config details into one dashboard, and then u can find out how many resources are ruuning in ur account.
+It is not a point in time data u can also see and find what was the configuration previously on particular resources.So u can naviagate and find ot what changes have happened.
+
+It also helps to ientify if u a re using best practices or not.if ur complying to secutiry standars like HIPAA and PCI.
+It also helps in doing auto remediation of certain controls by using dashboards or writing some custom rules and custom lambda finctions. in case of non-compliance.
+
+
+**How AWS config works
+
+ur resoeces in AWS-->u enable aws config-->normalised using AWS rules-->1)Notifications 2)API access 3)History snapsots.
+
+go to AWS config- in console and do the configuration for reauired resources .
+
+launch ec2, open port 22 for ssh to all world.
+add uncrypted ebs volumes to these ec2.
+
+then config rules.
++ rule-->AWS managed role-->encrypted volumes rules select-->scope resources-->give KMS id of the encrypted volumes
++ rule-->ebs volume attached or not
++ rule-->security group , to check if all traffic is allowed.
+
+
+now check resourcce inventory in aws config
+resource timeline.
+
+You can also used te Advanced Query feature where you can wrie sql queries to identify resources which are compliant or not.
+
+***AWS config aggregators
+if u have more then 1 account , and u want to check compliancy accross multiple accounts and it's resources then use aggrgators.
+
+
+
+***********************************************************
+Reactive controls(Auto remediate non-cpmpliant resources using AWS config)
+click on remediate button ..it gives some action like role to perform remedial actions this is manual.
+for auto remediatal u can use lambda or create a aws cloudformation stack with this auto remediaal faeture.
+
+
