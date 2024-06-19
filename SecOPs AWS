@@ -38,3 +38,85 @@ click on remediate button ..it gives some action like role to perform remedial a
 for auto remediatal u can use lambda or create a aws cloudformation stack with this auto remediaal faeture.
 
 
+Aws Enforce No Public Ip's for Ec2 Policy using AWS Config.
+
+
+Most commmon AWS config rules:-
+1)IAM-password-policy
+2)Ima-user-groups:- let's say u don't want empty groups in ur account.
+3)restricted ssh:- whether sg are having internet access.
+4)access-keys-rotated.
+5)s3-account-level-public access.
+6)eip-attahed:- eip associated with ec2 or not.
+7)ebs-volumes_enrcypted
+
+
+You can create custom roles:-
+1)Aws config;;- config rules-:- lamdba function(will evaluate) if IAM role is used in last 3o days or not evalutes everyting and puts back(compliant/non-compliant in config).
+
+
+*************************************Proactive Security controls.
+
+1)Automatically remediate AWS cloudtrail disabling:- Monitor,alert,re-enable
+CLoudtrail is import from auditing pesrepective, if some one is doing malicious acitivyt then they disbae the cloudtrail.
+so u should have mechanism to re-enable it( for this lab enable GuardDuty nd Security Hub)
+AWScloudtrail is disabled-->this is captured as an event in cloudwatch-->which will trigger an email via sns topic and will also invoke a lambda function which will re-enable the cloudtrail.
+****
+remove unused security group using lambda which are not in use for a longer time
+***********
+Proactively monitor and fix bad or overly permissive S3 ACL's
+lab:-if someone is adding an object to bucket as public.
+so u enable cloudtrail(so that s3 api calls are logged) and put oject ebvent is captured and sent to event brige  and event brige then invokes a step function.
+where the step function can notify secops team and u can mention action to remediate the action from public to private.
+
+
+******Proactively monitor to failed ssh login to ec2
+add cloudwatch agent in ec2 and ask the agent to watch ssh logs for that instance.
+and ask agent to send all info to cloud watch logs(u can setup some custom metrics) and based on these metrics u can trigger a lamdba function which will triger step function
+which will send a notification and isolate the instance.
+
+
+**********Automatically rotate Ec2 SSH keys for all your instances relaibly.
+LAb:- if u have ssh pem keys that are used longer u can roate them using AWS Systems Manager.
+orereq:- SSM agent needs to be installed, and an IAM role needs to be created for SSM agent to write the contents to EC2 instance.
+
+Once the above is done.
+create a new pem file using ssh-keygen command and copy the content go to AWS systms manager-->run command and add command to add it in ec2_user/home/ssh/auth_keys
+choose the number of instances.
+and you can do this on all ur instances.
+
+**********Proactively block s3 Public Access at scale.
+**Attribute based-access control :- proactively restrict s3 acces based on user tags.
+**Attribute based access control:- Proactively restrict access to ec2 based on tags.
+****************
+Proactive security:-
+learn how to ctreate a fine grained permissions like a pro:_ tools AWS Policy generator and IAM Policy SImulator.
+
+USe AWS Secrets manager to secure ur db credentials and retreive using AWS lamda
+
+![RDS cred](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/c5ce255f-a4fe-4032-914f-19b68a006d55)
+
+**************
+USe outbound VPC proxy for domain whitelisting and content filtering.(instead of NAT gateway if requiered)
+
+***
+Use IAM Access analyzer to identify unitented resource access.
+
+****************************
+Automatically respond to DDos Attacks(intention to bring ur app down, by sql injectstion or multiple request to ur app) using WAF.
+for this lab u can use amazon API which they gave it same sample pet api
+create WAF, with custom rule(rate limit) let' say if ur application gets 20000 requests for 5 mins deny the app requst.
+use an ec2 machine to simulate and attack. so install apache workbench
+and hit the api 
+after 5 mins u get access forbidden error.
+
+***************
+Detect Ec2 instance cred abuse.
+Basically some ec2 instance may have an IAM role attached to it to read data from s3, in some casses thr IAM role attached to ec2 may
+have access to read all s3 buckets instead of 1 bucket, so if the ec2 server is compromised then the hacker can get access to all s3 buckets.
+so attach IAM role with needed prvivliges.
+
+************Automatically respond to ec2 instance cred abuse.
+do lab.
+
+
