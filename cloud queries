@@ -1,8 +1,50 @@
-AWS  ELB classic
-hhtp 500 error:- this error is related to server but u are not sure which component of server has failes.
+1)AWS  ELB classic
+2)hhtp 500 error:- this error is related to server but u are not sure which component of server has failes.
 is it the db,app,or network error or is it an access issue for a file, so u have to drill to the logs.
 
 capex(traditional, u buy everything) leads to wastage if resource are not used. or opex(Pay -as-you go)
-IAM Policy, types of policty
-7 Migration r's
-Ai for cloud
+3)IAM Policy, types of policty
+.Managed Policy by AWS"-
+.Custom Policy
+.Inline Policies:- Policies that are directly embedded into a single user, group, or role. They are tightly coupled with the principal entity and cannot be reused. If the entity is deleted, the inline policy is deleted as well.
+Example: An inline policy attached to a specific IAM user that grants administrative access to an S3 bucket.
+
+You have an employee named Alice who is responsible for managing the contents of a specific S3 bucket called project-data-bucket. Alice needs full control over this bucket but should not have permissions on any other resources within the AWS account.
+
+Steps to Create an Inline Policy for Alice:
+Create the IAM User:
+
+Ensure that Alice has an IAM user account in your AWS account.
+Attach the Inline Policy to Alice’s IAM User:
+
+Here’s a JSON policy document that grants Alice full control over the project-data-bucket and no other resources.
+
+json
+Copy code
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": [
+        "arn:aws:s3:::project-data-bucket",
+        "arn:aws:s3:::project-data-bucket/*"
+      ]
+    }
+  ]
+}
+
+.Service control Policies:- Policies used in AWS Organizations to manage permissions across all accounts within the organization. SCPs define the maximum available permissions for all accounts, allowing central control over what services and actions can be performed.
+Example: An SCP that denies the ability to delete S3 buckets across all accounts in an organization.
+.Resource-based Policies: Policies that are attached directly to AWS resources instead of IAM entities. They define who (which users, roles, or accounts) can access the resource and what actions they can perform.
+Example: An S3 bucket policy that grants another
+
+4)7 Migration r's
+5)Ai for cloud
