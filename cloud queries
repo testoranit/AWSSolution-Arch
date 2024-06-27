@@ -1,6 +1,8 @@
 AWS  ELB classic
-hhtp 500 error
-capex or opex
+hhtp 500 error:- this error is related to server but u are not sure which component of server has failes.
+is it the db,app,or network error or is it an access issue for a file, so u have to drill to the logs.
+
+capex(traditional, u buy everything) leads to wastage if resource are not used. or opex(Pay -as-you go)
 IAM Policy, types of policty
 7 Migration r's
 Ai for cloud
