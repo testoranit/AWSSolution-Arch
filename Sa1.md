@@ -340,11 +340,15 @@ Private hosted zone:-
 ur ec2 asks for the dns resolution  with Route 53 for ur db in private subnet is an example of Private Hosted Zone.
 
 
+
 MIgratio of Route 53:-
 You can always migrate records from another hosted zone or other account or other provider to AWS Route 53, and viceversa.
 
 ![ROuting policis](https://github.com/testoranit/AWSSolution-Arch/assets/124513439/a329abb3-4a3a-4c25-9b1f-1f8a457112dc)
 
+
+Geolocation: Focuses on the user's location.
+Geoproximity: Considers both the user's location and the resource's location, along with optional biases.
 Also have weighted routed policies.
 u can use this for a blue green scenaro.
 
