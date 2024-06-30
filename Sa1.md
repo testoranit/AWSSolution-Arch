@@ -460,3 +460,9 @@ DB volumes & snaphots could be encyted.
 encryption can only be done at the time of db creatin.
 
 
+Oracle:-
+"Logs & events" tab, you can check the recent logs for any replication errors.
+The "Replication" section will show the replication status, including the Replica Lag
+SELECT * FROM V$DATAGUARD_STATS WHERE NAME = 'apply lag';
+
+
